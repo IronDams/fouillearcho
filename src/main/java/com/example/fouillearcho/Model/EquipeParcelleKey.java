@@ -2,6 +2,9 @@ package com.example.fouillearcho.Model;
 
 import jakarta.persistence.Column;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class EquipeParcelleKey {
 	@Column(name ="equipe_id")
 	private Long equipeId;
