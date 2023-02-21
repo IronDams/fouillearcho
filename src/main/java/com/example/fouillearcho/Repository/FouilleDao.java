@@ -11,9 +11,10 @@ import java.util.Date;
 import java.util.List;
 
 public interface FouilleDao extends JpaRepository<Fouille, EquipeParcelleKey> {
-	@Query("select f.equipe from fouille f where f.parcelle = ?1")
-	List<Equipe> findEquipeByParcelle(Parcelle parcelle);
-
-	@Query("select f.equipe from fouille f where f.parcelle = ?1 and f.date = ?2")
-	List<Equipe> findEquipeByParcelleDate(Parcelle parcelle, Date date);
+	/** A revoir
+	 * @Query("select f.equipe from fouille f where f.parcelle = ?1")
+	 * List<Equipe> findEquipeByParcelle(Parcelle parcelle);
+	 * @Query("select f.equipe from fouille f where f.parcelle = ?1 and f.dateFouille = ?2")
+	 * List<Equipe> findEquipeByParcelleDate(Parcelle parcelle, Date dateFouille);
+	 * /
 }
