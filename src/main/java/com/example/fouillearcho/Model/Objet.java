@@ -25,8 +25,10 @@ public class Objet {
 	private Conservation conservation;
 
 	@OneToOne
-	@JoinColumn(name="fouille_id")
-	private Fouille fouile;
+	@JoinColumns({
+		@JoinColumn(name = "equipe_id"),
+		@JoinColumn(name = "parcelle_id")})
+	private Fouille fouille;
 
 	public Objet() {
 		super();
@@ -77,5 +79,13 @@ public class Objet {
 
 	public void setConservation(Conservation conservation) {
 		this.conservation = conservation;
+	}
+	
+	public Fouille getFouille() {
+		return fouille;
+	}
+
+	public void setFouille(Fouille fouille) {
+		this.fouille = fouille;
 	}
 }
